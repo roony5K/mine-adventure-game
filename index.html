@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: #8B7355;
             color: #ecf0f1;
             overflow: hidden;
             height: 100vh;
@@ -33,34 +33,34 @@
         #mainMenu {
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #8B6F47 0%, #A0826D 100%);
         }
 
         .menu-container {
             text-align: center;
             padding: 40px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 20px;
-            border: 3px solid #f39c12;
+            border: 3px solid #D4A574;
         }
 
         .game-title {
             font-size: 4rem;
-            color: #f39c12;
+            color: #FFD700;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         }
 
         .menu-subtitle {
             font-size: 1.2rem;
-            color: #bdc3c7;
+            color: #F5DEB3;
             margin-bottom: 30px;
         }
 
         .menu-footer {
             margin-top: 30px;
             font-size: 0.9rem;
-            color: #95a5a6;
+            color: #D4A574;
         }
 
         /* ===== BUTTONS ===== */
@@ -77,59 +77,64 @@
         }
 
         .btn-primary {
-            background: #f39c12;
+            background: #FFD700;
             color: #000;
+            border: 2px solid #FFA500;
         }
 
         .btn-primary:hover {
-            background: #e67e22;
+            background: #FFA500;
             transform: scale(1.05);
         }
 
         .btn-secondary {
-            background: #3498db;
+            background: #8B4513;
             color: #fff;
+            border: 2px solid #D4A574;
         }
 
         .btn-secondary:hover {
-            background: #2980b9;
+            background: #A0522D;
             transform: scale(1.05);
         }
 
         .btn-danger {
-            background: #e74c3c;
+            background: #8B0000;
             color: #fff;
+            border: 2px solid #DC143C;
         }
 
         .btn-danger:hover {
-            background: #c0392b;
+            background: #DC143C;
             transform: scale(1.05);
         }
 
         .btn-mine {
-            background: #27ae60;
+            background: #228B22;
             color: #fff;
             padding: 15px 30px;
             font-size: 1.2rem;
             width: 100%;
             margin: 10px 0;
+            border: 2px solid #32CD32;
         }
 
         .btn-mine:hover {
-            background: #229954;
+            background: #32CD32;
         }
 
         .btn-elevator {
-            background: #9b59b6;
+            background: #4169E1;
             color: #fff;
             padding: 15px 30px;
             font-size: 1.2rem;
             width: 100%;
             margin: 10px 0;
+            border: 2px solid #87CEEB;
         }
 
         .btn-elevator:hover {
-            background: #8e44ad;
+            background: #87CEEB;
         }
 
         .btn-small {
@@ -141,7 +146,7 @@
         /* ===== GAME SCREEN ===== */
         #gameScreen {
             flex-direction: column;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: #8B7355;
         }
 
         .game-container {
@@ -153,8 +158,8 @@
 
         /* ===== STATS BAR ===== */
         .stats-bar {
-            background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
-            border-bottom: 3px solid #f39c12;
+            background: linear-gradient(90deg, #654321 0%, #8B4513 100%);
+            border-bottom: 3px solid #FFD700;
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
@@ -170,16 +175,16 @@
             background: rgba(0, 0, 0, 0.3);
             padding: 8px 15px;
             border-radius: 5px;
-            border: 1px solid #f39c12;
+            border: 1px solid #FFD700;
         }
 
         .stat-label {
-            color: #bdc3c7;
+            color: #F5DEB3;
             font-weight: bold;
         }
 
         .stat-value {
-            color: #f39c12;
+            color: #FFD700;
             font-weight: bold;
             font-size: 1.1rem;
         }
@@ -194,14 +199,87 @@
         }
 
         .left-panel {
-            flex: 1;
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-            border: 2px solid #f39c12;
+            width: 450px;
+            background: linear-gradient(135deg, #A0826D 0%, #8B7355 100%);
+            border: 3px solid #8B4513;
             border-radius: 10px;
             padding: 20px;
-            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
+        .elevator-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #4169E1;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        #elevatorCanvas {
+            background: linear-gradient(to bottom, #87CEEB 0%, #E0FFFF 100%);
+            border: 2px solid #4169E1;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .elevator-info {
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        .elevator-info p {
+            color: #FFD700;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .mine-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #8B4513;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #mineCanvas {
+            background: linear-gradient(to bottom, #4A4A4A 0%, #1A1A1A 100%);
+            border: 2px solid #8B4513;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .ore-info {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #FFD700;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .ore-info p {
+            color: #FFD700;
+            font-weight: bold;
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+
+        /* ===== RIGHT PANEL ===== */
         .right-panel {
             width: 350px;
             display: flex;
@@ -211,80 +289,19 @@
         }
 
         .panel-section {
-            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-            border: 2px solid #f39c12;
+            background: linear-gradient(135deg, #A0826D 0%, #8B7355 100%);
+            border: 2px solid #8B4513;
             border-radius: 10px;
             padding: 15px;
         }
 
         .panel-section h3 {
-            color: #f39c12;
+            color: #FFD700;
             margin-bottom: 15px;
-            border-bottom: 2px solid #f39c12;
+            border-bottom: 2px solid #FFD700;
             padding-bottom: 10px;
         }
 
-        /* ===== MINE SECTION ===== */
-        .mine-section {
-            text-align: center;
-        }
-
-        #currentMineTitle {
-            color: #f39c12;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .ore-display {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin: 30px 0;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #f39c12;
-        }
-
-        .ore-visual {
-            font-size: 5rem;
-            animation: bob 2s ease-in-out infinite;
-        }
-
-        @keyframes bob {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .ore-info {
-            text-align: left;
-        }
-
-        .ore-info p {
-            font-size: 1.1rem;
-            margin: 10px 0;
-            color: #ecf0f1;
-        }
-
-        .ore-info p strong {
-            color: #f39c12;
-        }
-
-        .depth-progress {
-            margin-top: 30px;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #3498db;
-        }
-
-        .depth-progress h3 {
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-
-        /* ===== MANAGERS LIST ===== */
         .managers-list {
             display: flex;
             flex-direction: column;
@@ -293,53 +310,34 @@
 
         .manager-item {
             background: rgba(0, 0, 0, 0.3);
-            border: 1px solid #f39c12;
+            border: 1px solid #FFD700;
             border-radius: 8px;
             padding: 12px;
             text-align: left;
         }
 
         .manager-item h4 {
-            color: #f39c12;
+            color: #FFD700;
             margin-bottom: 8px;
         }
 
         .manager-item p {
             font-size: 0.9rem;
-            color: #bdc3c7;
+            color: #F5DEB3;
             margin: 5px 0;
         }
 
         .manager-item.owned {
-            border-color: #27ae60;
-            background: rgba(39, 174, 96, 0.1);
+            border-color: #228B22;
+            background: rgba(34, 139, 34, 0.2);
         }
 
         .manager-item.owned::before {
             content: "✓ ";
-            color: #27ae60;
+            color: #228B22;
             font-weight: bold;
         }
 
-        /* ===== ELEVATOR INFO ===== */
-        .elevator-info {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #f39c12;
-        }
-
-        .elevator-info p {
-            color: #ecf0f1;
-            margin: 8px 0;
-            font-size: 0.95rem;
-        }
-
-        .elevator-info p strong {
-            color: #f39c12;
-        }
-
-        /* ===== RESOURCES LIST ===== */
         .resources-list {
             display: flex;
             flex-direction: column;
@@ -348,7 +346,7 @@
 
         .resource-item {
             background: rgba(0, 0, 0, 0.3);
-            border: 1px solid #3498db;
+            border: 1px solid #4169E1;
             border-radius: 8px;
             padding: 12px;
             display: flex;
@@ -357,13 +355,26 @@
         }
 
         .resource-name {
-            color: #f39c12;
+            color: #FFD700;
             font-weight: bold;
         }
 
         .resource-amount {
-            color: #27ae60;
+            color: #228B22;
             font-weight: bold;
+        }
+
+        .depth-progress {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #4169E1;
+            text-align: center;
+        }
+
+        .depth-progress h3 {
+            color: #4169E1;
+            margin-bottom: 15px;
         }
 
         /* ===== MODAL ===== */
@@ -385,18 +396,18 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #654321 0%, #8B4513 100%);
             padding: 30px;
             border-radius: 15px;
-            border: 3px solid #f39c12;
+            border: 3px solid #FFD700;
             max-width: 600px;
             max-height: 80vh;
             overflow-y: auto;
-            box-shadow: 0 0 20px rgba(243, 156, 18, 0.5);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
         .modal-content h2 {
-            color: #f39c12;
+            color: #FFD700;
             margin-bottom: 20px;
         }
 
@@ -405,17 +416,17 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border: 1px solid #f39c12;
+            border: 1px solid #FFD700;
         }
 
         .stats-content p {
-            color: #ecf0f1;
+            color: #F5DEB3;
             margin: 10px 0;
             font-size: 1.1rem;
         }
 
         .stats-content strong {
-            color: #f39c12;
+            color: #FFD700;
         }
 
         /* ===== NOTIFICATION ===== */
@@ -423,14 +434,15 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #27ae60;
+            background: #228B22;
             color: white;
             padding: 15px 25px;
             border-radius: 8px;
             display: none;
             z-index: 999;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-left: 4px solid #f39c12;
+            border-left: 4px solid #FFD700;
+            font-weight: bold;
         }
 
         .notification-toast.show {
@@ -457,12 +469,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #f39c12;
+            background: #FFD700;
             border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #e67e22;
+            background: #FFA500;
         }
     </style>
 </head>
@@ -475,7 +487,7 @@
             <button id="startBtn" class="btn btn-primary">START GAME</button>
             <button id="loadBtn" class="btn btn-secondary">LOAD GAME</button>
             <div class="menu-footer">
-                <p>⚙️ Click to mine • 💼 Hire managers to automate • 🛗 Use elevator to collect money</p>
+                <p>⚙️ Click on miner to mine • 💼 Hire managers to automate • 🛗 Use elevator to collect money</p>
             </div>
         </div>
     </div>
@@ -507,33 +519,36 @@
 
             <!-- Main Game Area -->
             <div class="game-content">
-                <!-- Left Panel: Mining Area -->
+                <!-- Left Panel: Mining & Elevator -->
                 <div class="left-panel">
+                    <!-- Elevator Section -->
+                    <div class="elevator-section">
+                        <h3 style="color: #4169E1; margin-bottom: 15px;">🛗 ELEVATOR</h3>
+                        <canvas id="elevatorCanvas" width="400" height="300"></canvas>
+                        <div class="elevator-info">
+                            <p id="elevatorStatus">Status: Manual</p>
+                            <p id="oreReadyCount">Ore Ready: 0</p>
+                        </div>
+                    </div>
+
+                    <!-- Mining Section -->
                     <div class="mine-section">
-                        <h2 id="currentMineTitle">Coal Mine - Depth 1</h2>
-                        <div class="ore-display">
-                            <div id="oreVisual" class="ore-visual">⬛</div>
-                            <div id="oreInfo" class="ore-info">
-                                <p><strong>Ore:</strong> <span id="oreType">Coal</span></p>
-                                <p><strong>Value per ore:</strong> $<span id="oreValue">10</span></p>
-                                <p><strong>In hand:</strong> <span id="oreAmount">0</span></p>
-                            </div>
+                        <h3 style="color: #8B4513; margin-bottom: 15px;">⛏️ MINING</h3>
+                        <canvas id="mineCanvas" width="400" height="300"></canvas>
+                        <div class="ore-info">
+                            <p><strong>Current Ore:</strong> <span id="oreType">Coal</span></p>
+                            <p><strong>Value:</strong> $<span id="oreValue">10</span> per ore</p>
+                            <p><strong>In Hand:</strong> <span id="oreAmount">0</span></p>
                         </div>
-                        <button id="mineBtn" class="btn btn-mine">⛏️ MINE ORE</button>
+                        <button id="mineBtn" class="btn btn-mine">⛏️ MINE ORE (Click Miner)</button>
                         <button id="useElevatorBtn" class="btn btn-elevator">🛗 USE ELEVATOR</button>
-                        
-                        <!-- Depth Progress -->
-                        <div class="depth-progress">
-                            <h3>🔽 Go Deeper to Better Ores</h3>
-                            <button id="goDeepBtn" class="btn btn-primary">Go to Depth 2 ($500)</button>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Right Panel: Managers & Upgrades -->
                 <div class="right-panel">
                     <!-- Managers Section -->
-                    <div class="panel-section managers-section">
+                    <div class="panel-section">
                         <h3>👷 HIRE MANAGERS</h3>
                         <div id="managersList" class="managers-list">
                             <!-- Managers will be populated here -->
@@ -544,7 +559,7 @@
                     <div class="panel-section">
                         <h3>🛗 ELEVATOR MANAGER</h3>
                         <div class="elevator-info">
-                            <p><strong>Status:</strong> <span id="elevatorStatus">Manual</span></p>
+                            <p><strong>Status:</strong> <span id="elevatorStatusText">Manual</span></p>
                             <button id="buyElevatorMgrBtn" class="btn btn-primary">Buy Manager - $1000</button>
                         </div>
                     </div>
@@ -555,6 +570,12 @@
                         <div id="resourcesList" class="resources-list">
                             <!-- Resources will be populated here -->
                         </div>
+                    </div>
+
+                    <!-- Depth Progress -->
+                    <div class="panel-section depth-progress">
+                        <h3>🔽 Go Deeper</h3>
+                        <button id="goDeepBtn" class="btn btn-primary">Go to Depth 2 ($500)</button>
                     </div>
                 </div>
             </div>
@@ -586,12 +607,144 @@
     <div id="notificationToast" class="notification-toast"></div>
 
     <script>
+        // ===== CANVAS DRAWING FUNCTIONS =====
+        function drawMiner(ctx, x, y, isSwinging = false) {
+            // Body (brown shirt)
+            ctx.fillStyle = '#8B4513';
+            ctx.fillRect(x, y + 40, 30, 40);
+
+            // Head (skin color)
+            ctx.fillStyle = '#D2B48C';
+            ctx.beginPath();
+            ctx.arc(x + 15, y + 30, 12, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Arms
+            ctx.strokeStyle = '#D2B48C';
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            if (isSwinging) {
+                ctx.moveTo(x + 5, y + 50);
+                ctx.lineTo(x - 10, y + 30);
+                ctx.moveTo(x + 25, y + 50);
+                ctx.lineTo(x + 40, y + 30);
+            } else {
+                ctx.moveTo(x + 5, y + 50);
+                ctx.lineTo(x, y + 65);
+                ctx.moveTo(x + 25, y + 50);
+                ctx.lineTo(x + 30, y + 65);
+            }
+            ctx.stroke();
+
+            // Legs (dark pants)
+            ctx.fillStyle = '#2F4F4F';
+            ctx.fillRect(x + 5, y + 80, 8, 25);
+            ctx.fillRect(x + 17, y + 80, 8, 25);
+
+            // Pickaxe
+            ctx.strokeStyle = '#8B4513';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            if (isSwinging) {
+                ctx.moveTo(x + 15, y + 20);
+                ctx.lineTo(x + 35, y - 5);
+            } else {
+                ctx.moveTo(x + 15, y + 20);
+                ctx.lineTo(x + 25, y + 5);
+            }
+            ctx.stroke();
+
+            // Pickaxe head
+            ctx.fillStyle = '#FFD700';
+            if (isSwinging) {
+                ctx.fillRect(x + 32, y - 10, 8, 4);
+            } else {
+                ctx.fillRect(x + 22, y, 8, 4);
+            }
+        }
+
+        function drawMineBackground(ctx) {
+            // Rocks
+            ctx.fillStyle = '#696969';
+            ctx.fillRect(50, 50, 80, 60);
+            ctx.fillRect(150, 80, 100, 50);
+            ctx.fillRect(90, 150, 120, 70);
+            
+            // Coal ore deposits
+            ctx.fillStyle = '#2F2F2F';
+            ctx.fillRect(60, 60, 20, 20);
+            ctx.fillRect(160, 100, 20, 20);
+            ctx.fillRect(120, 170, 25, 25);
+            
+            // Gold ore deposits (for deeper mines)
+            ctx.fillStyle = '#FFD700';
+            ctx.globalAlpha = 0.6;
+            ctx.fillRect(70, 140, 15, 15);
+            ctx.globalAlpha = 1;
+
+            // Dust particles
+            ctx.fillStyle = '#A9A9A9';
+            ctx.globalAlpha = 0.3;
+            for (let i = 0; i < 20; i++) {
+                ctx.fillRect(Math.random() * 400, Math.random() * 300, 2, 2);
+            }
+            ctx.globalAlpha = 1;
+        }
+
+        function drawElevator(ctx, height = 150, oreCount = 0) {
+            // Elevator shaft (metal)
+            ctx.fillStyle = '#696969';
+            ctx.fillRect(50, 20, 300, 260);
+            
+            // Elevator cable
+            ctx.strokeStyle = '#999999';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(100, 20);
+            ctx.lineTo(100, height);
+            ctx.moveTo(300, 20);
+            ctx.lineTo(300, height);
+            ctx.stroke();
+
+            // Elevator car
+            ctx.fillStyle = '#4169E1';
+            ctx.fillRect(80, height - 40, 240, 40);
+            
+            // Elevator border
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(80, height - 40, 240, 40);
+
+            // Ores in elevator
+            const oresPerRow = 6;
+            let oreDrawn = 0;
+            for (let i = 0; i < oreCount && oreDrawn < 12; i++) {
+                const row = Math.floor(oreDrawn / oresPerRow);
+                const col = oreDrawn % oresPerRow;
+                const x = 90 + col * 35;
+                const y = height - 35 + row * 20;
+
+                ctx.fillStyle = '#2F2F2F';
+                ctx.fillRect(x, y, 12, 12);
+                ctx.fillStyle = '#FFD700';
+                ctx.fillRect(x + 2, y + 2, 8, 8);
+                oreDrawn++;
+            }
+
+            // Ground level
+            ctx.fillStyle = '#8B7355';
+            ctx.fillRect(0, 280, 400, 20);
+            ctx.strokeStyle = '#654321';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(0, 280, 400, 20);
+        }
+
         // ===== GAME DATA =====
         const ORE_TYPES = [
-            { name: 'Coal', symbol: '⬛', value: 10, depth: 1 },
-            { name: 'Gold', symbol: '🟨', value: 50, depth: 2 },
-            { name: 'Diamond', symbol: '💎', value: 150, depth: 3 },
-            { name: 'Emerald', symbol: '💚', value: 200, depth: 4 }
+            { name: 'Coal', value: 10, depth: 1, color: '#2F2F2F' },
+            { name: 'Gold', value: 50, depth: 2, color: '#FFD700' },
+            { name: 'Diamond', value: 150, depth: 3, color: '#00CED1' },
+            { name: 'Emerald', value: 200, depth: 4, color: '#228B22' }
         ];
 
         const DEPTHS = [
@@ -612,7 +765,8 @@
             managers: {},
             resources: {},
             isPaused: false,
-            startTime: Date.now()
+            startTime: Date.now(),
+            minerSwinging: false
         };
 
         // Manager Definitions
@@ -650,6 +804,27 @@
         const goDeepBtn = document.getElementById('goDeepBtn');
         const buyElevatorMgrBtn = document.getElementById('buyElevatorMgrBtn');
         const saveBtn = document.getElementById('saveBtn');
+        const mineCanvas = document.getElementById('mineCanvas');
+        const elevatorCanvas = document.getElementById('elevatorCanvas');
+
+        // ===== CANVAS RENDERING =====
+        function renderMineCanvas() {
+            const ctx = mineCanvas.getContext('2d');
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, mineCanvas.width, mineCanvas.height);
+            
+            drawMineBackground(ctx);
+            drawMiner(ctx, 180, 120, gameState.minerSwinging);
+        }
+
+        function renderElevatorCanvas() {
+            const ctx = elevatorCanvas.getContext('2d');
+            ctx.fillStyle = '#E0FFFF';
+            ctx.fillRect(0, 0, elevatorCanvas.width, elevatorCanvas.height);
+            
+            const elevatorHeight = 150 + (gameState.oreInHand * 5);
+            drawElevator(ctx, elevatorHeight, gameState.oreInHand);
+        }
 
         // ===== DISPLAY UPDATES =====
         function updateDisplay() {
@@ -665,14 +840,14 @@
 
             // Update current ore info
             const currentOre = ORE_TYPES[gameState.currentOreIndex];
-            document.getElementById('currentMineTitle').textContent = `${currentOre.name} Mine - Depth ${gameState.currentDepth}`;
-            document.getElementById('oreVisual').textContent = currentOre.symbol;
             document.getElementById('oreType').textContent = currentOre.name;
             document.getElementById('oreValue').textContent = currentOre.value;
             document.getElementById('oreAmount').textContent = gameState.oreInHand;
 
             // Update elevator status
-            document.getElementById('elevatorStatus').textContent = gameState.hasElevatorManager ? 'Automated' : 'Manual';
+            document.getElementById('elevatorStatus').textContent = gameState.hasElevatorManager ? 'Automated' : 'Manual (Click)';
+            document.getElementById('elevatorStatusText').textContent = gameState.hasElevatorManager ? 'Automated ✓' : 'Manual';
+            document.getElementById('oreReadyCount').textContent = 'Ore Ready: ' + gameState.oreInHand;
             document.getElementById('useElevatorBtn').textContent = `🛗 USE ELEVATOR ($${Math.max(1, 5 - gameState.currentDepth)})`;
 
             // Update depth button
@@ -682,6 +857,10 @@
                 document.getElementById('goDeepBtn').textContent = `Go to Depth ${nextDepth.level + 1} ($${nextDepth.cost})`;
                 document.getElementById('goDeepBtn').disabled = gameState.money < nextDepth.cost;
             }
+
+            // Render canvases
+            renderMineCanvas();
+            renderElevatorCanvas();
 
             // Update managers list
             updateManagersList();
@@ -703,13 +882,13 @@
                     div.innerHTML = `
                         <h4>${manager.name}</h4>
                         <p>${manager.description}</p>
-                        <p style="color: #27ae60;">Owned ✓</p>
+                        <p style="color: #228B22;">Owned ✓</p>
                     `;
                 } else {
                     div.innerHTML = `
                         <h4>${manager.name}</h4>
                         <p>${manager.description}</p>
-                        <button class="btn btn-primary" style="width: 100%;" onclick="buyManager('${key}')">Buy - $${manager.cost}</button>
+                        <button class="btn btn-primary" style="width: 100%; padding: 8px;" onclick="buyManager('${key}')">Buy - $${manager.cost}</button>
                     `;
                 }
                 managersList.appendChild(div);
@@ -726,7 +905,7 @@
                     const div = document.createElement('div');
                     div.className = 'resource-item';
                     div.innerHTML = `
-                        <span class="resource-name">${ore.symbol} ${ore.name}</span>
+                        <span class="resource-name">${ore.name}</span>
                         <span class="resource-amount">${amount}</span>
                     `;
                     resourcesList.appendChild(div);
@@ -743,9 +922,16 @@
             if (gameState.isPaused) return;
             const currentOre = ORE_TYPES[gameState.currentOreIndex];
             gameState.oreInHand++;
+            
+            // Swing animation
+            gameState.minerSwinging = true;
+            renderMineCanvas();
+            setTimeout(() => {
+                gameState.minerSwinging = false;
+                renderMineCanvas();
+            }, 200);
+
             showNotification(`⛏️ Mined ${currentOre.name}!`);
-            mineBtn.style.transform = 'scale(0.95)';
-            setTimeout(() => { mineBtn.style.transform = 'scale(1)'; }, 100);
             updateDisplay();
         }
 
@@ -832,6 +1018,7 @@
                 if (!gameState.isPaused && manager.active) {
                     if (gameState.currentOreIndex === oreIndex) {
                         gameState.oreInHand++;
+                        updateDisplay();
                     }
                 }
             }, 5000 - manager.speed);
@@ -924,6 +1111,8 @@
             statsModal.classList.remove('show');
         });
         mineBtn.addEventListener('click', mineOre);
+        mineCanvas.addEventListener('click', mineOre);
+        elevatorCanvas.addEventListener('click', useElevator);
         useElevatorBtn.addEventListener('click', useElevator);
         goDeepBtn.addEventListener('click', goDeeper);
         buyElevatorMgrBtn.addEventListener('click', buyElevatorManager);
@@ -949,6 +1138,9 @@
                 }
             }
         });
+
+        // Initial render
+        updateDisplay();
     </script>
 </body>
 </html>
