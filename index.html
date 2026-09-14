@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Adventure - Ore Mining Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Menu Screen -->
+    <div id="mainMenu" class="screen active">
+        <div class="menu-container">
+            <h1 class="game-title">⛏️ MINE ADVENTURE</h1>
+            <p class="menu-subtitle">Dig Deep, Get Rich, Hire Managers</p>
+            <button id="startBtn" class="btn btn-primary">START GAME</button>
+            <button id="loadBtn" class="btn btn-secondary">LOAD GAME</button>
+            <div class="menu-footer">
+                <p>⚙️ Click to mine • 💼 Hire managers to automate</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-container">
+            <!-- Top Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-label">💰 Money:</span>
+                    <span id="moneyDisplay" class="stat-value">$0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">⏱️ Time:</span>
+                    <span id="timeDisplay" class="stat-value">0h 0m</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">📊 Level:</span>
+                    <span id="depthDisplay" class="stat-value">Depth 1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">📦 Inventory:</span>
+                    <span id="inventoryDisplay" class="stat-value">Empty</span>
+                </div>
+                <button id="saveBtn" class="btn btn-small">💾 SAVE</button>
+                <button id="menuBtn" class="btn btn-small">📋 MENU</button>
+            </div>
+
+            <!-- Main Game Area -->
+            <div class="game-content">
+                <!-- Left Panel: Mining Area -->
+                <div class="left-panel">
+                    <div class="mine-section">
+                        <h2 id="currentMineTitle">Coal Mine - Depth 1</h2>
+                        <div class="ore-display">
+                            <div id="oreVisual" class="ore-visual">⬛</div>
+                            <div id="oreInfo" class="ore-info">
+                                <p id="oreType">Coal Ore</p>
+                                <p id="oreValue">Value: $10</p>
+                                <p id="oreAmount">In Hand: 0</p>
+                            </div>
+                        </div>
+                        <button id="mineBtn" class="btn btn-mine">⛏️ MINE ORE</button>
+                        <button id="useElevatorBtn" class="btn btn-elevator">🛗 USE ELEVATOR ($5)</button>
+                        
+                        <!-- Depth Progress -->
+                        <div class="depth-progress">
+                            <h3>Go Deeper?</h3>
+                            <button id="goDeepBtn" class="btn btn-primary">📍 Go to Depth 2 ($500)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Managers & Upgrades -->
+                <div class="right-panel">
+                    <!-- Managers Section -->
+                    <div class="panel-section managers-section">
+                        <h3>👷 HIRE MANAGERS</h3>
+                        <div id="managersList" class="managers-list">
+                            <!-- Managers will be populated here -->
+                        </div>
+                    </div>
+
+                    <!-- Elevator Manager -->
+                    <div class="panel-section">
+                        <h3>🛗 ELEVATOR</h3>
+                        <div class="elevator-info">
+                            <p id="elevatorStatus">Status: Manual</p>
+                            <p id="elevatorSpeed">Speed: Normal</p>
+                            <button id="buyElevatorMgrBtn" class="btn btn-primary">Buy Manager - $1000</button>
+                        </div>
+                    </div>
+
+                    <!-- Resources Overview -->
+                    <div class="panel-section">
+                        <h3>📊 RESOURCES</h3>
+                        <div id="resourcesList" class="resources-list">
+                            <!-- Resources will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pause Menu -->
+    <div id="pauseMenu" class="modal">
+        <div class="modal-content">
+            <h2>⏸️ PAUSE MENU</h2>
+            <button id="resumeBtn" class="btn btn-primary">Resume Game</button>
+            <button id="statsBtn" class="btn btn-secondary">View Statistics</button>
+            <button id="settingsBtn" class="btn btn-secondary">Settings</button>
+            <button id="mainMenuBtn" class="btn btn-danger">Return to Main Menu</button>
+        </div>
+    </div>
+
+    <!-- Stats Modal -->
+    <div id="statsModal" class="modal">
+        <div class="modal-content">
+            <h2>📊 GAME STATISTICS</h2>
+            <div id="statsContent" class="stats-content">
+                <!-- Stats will be populated here -->
+            </div>
+            <button id="closeStatsBtn" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="notification-toast"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>
