@@ -114,28 +114,6 @@
             margin: 5px;
         }
 
-        .btn-upgrade {
-            padding: 8px 12px;
-            font-size: 0.85rem;
-            margin: 5px auto;
-            display: block;
-            background: #228B22;
-            color: #fff;
-            border: 2px solid #32CD32;
-            border-radius: 5px;
-        }
-
-        .btn-upgrade:hover {
-            background: #32CD32;
-        }
-
-        .btn-upgrade:disabled {
-            background: #666;
-            border-color: #999;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-
         /* ===== GAME SCREEN ===== */
         #gameScreen {
             flex-direction: column;
@@ -192,12 +170,124 @@
             overflow: hidden;
         }
 
+        /* ===== ELEVATOR STRUCTURE ===== */
+        .elevator-tower {
+            width: 200px;
+            height: 100%;
+            background: linear-gradient(to bottom, #87CEEB 0%, #D3D3D3 10%, #A9A9A9 100%);
+            border: 3px solid #696969;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            flex-shrink: 0;
+        }
+
+        .elevator-title {
+            color: #4169E1;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Elevator shaft */
+        .elevator-shaft {
+            width: 160px;
+            height: 350px;
+            background: linear-gradient(90deg, #696969 0%, #808080 50%, #696969 100%);
+            border: 2px solid #505050;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        /* Elevator cables */
+        .elevator-shaft::before,
+        .elevator-shaft::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background: #C0C0C0;
+            top: 0;
+        }
+
+        .elevator-shaft::before {
+            left: 20%;
+        }
+
+        .elevator-shaft::after {
+            right: 20%;
+        }
+
+        /* Elevator car */
+        .elevator-car {
+            position: absolute;
+            width: 150px;
+            height: 60px;
+            background: linear-gradient(to bottom, #4169E1 0%, #36648B 100%);
+            border: 3px solid #FFD700;
+            border-radius: 8px;
+            bottom: 20px;
+            left: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .elevator-car:hover {
+            background: linear-gradient(to bottom, #1E90FF 0%, #0047AB 100%);
+            transform: scale(1.05);
+        }
+
+        .elevator-car-inner {
+            text-align: center;
+        }
+
+        /* Ore in elevator */
+        .elevator-ore-display {
+            position: absolute;
+            bottom: 90px;
+            left: 5px;
+            width: 150px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #999;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .elevator-status {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+            font-size: 0.85rem;
+            color: #FFD700;
+        }
+
         /* ===== MINES GRID ===== */
         .mines-area {
             flex: 1;
             display: flex;
             gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-end;
             overflow-x: auto;
             overflow-y: hidden;
@@ -244,76 +334,20 @@
             font-size: 0.8rem;
         }
 
-        /* ===== ELEVATOR SHAFT ===== */
-        .elevator-shaft {
-            background: linear-gradient(90deg, #696969 0%, #808080 50%, #696969 100%);
-            border: 2px solid #505050;
-            border-radius: 8px;
-            width: 140px;
-            height: 280px;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        /* Elevator cables */
-        .elevator-shaft::before,
-        .elevator-shaft::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 100%;
-            background: #C0C0C0;
-            top: 0;
-        }
-
-        .elevator-shaft::before {
-            left: 15%;
-        }
-
-        .elevator-shaft::after {
-            right: 15%;
-        }
-
-        /* Elevator car */
-        .elevator-car {
-            position: absolute;
-            width: 130px;
-            height: 50px;
-            background: linear-gradient(to bottom, #4169E1 0%, #36648B 100%);
-            border: 2px solid #FFD700;
+        .mine-status {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px;
             border-radius: 5px;
-            bottom: 30px;
-            left: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFD700;
-            font-weight: bold;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: bottom 0.3s ease;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 8px;
+            border: 1px solid #FFD700;
         }
 
-        .elevator-car:hover {
-            background: linear-gradient(to bottom, #4169E1 0%, #1E90FF 100%);
-        }
-
-        /* Ore display in elevator */
-        .ore-stack {
-            position: absolute;
-            bottom: 85px;
-            left: 5px;
-            width: 130px;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid #999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .mine-status p {
             color: #FFD700;
-            font-weight: bold;
-            border-radius: 3px;
+            font-size: 0.85rem;
+            margin: 2px 0;
         }
 
         /* ===== MINING AREA ===== */
@@ -374,35 +408,7 @@
             transform: rotate(45deg);
         }
 
-        .mining-info {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            color: #FFD700;
-        }
-
-        /* ===== MINE STATUS ===== */
-        .mine-status {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 8px;
-            border-radius: 5px;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 8px;
-            border: 1px solid #FFD700;
-        }
-
-        .mine-status p {
-            color: #FFD700;
-            font-size: 0.85rem;
-            margin: 2px 0;
-        }
-
-        /* ===== UPGRADE BUTTONS ===== */
+        /* ===== MINE CONTROLS ===== */
         .mine-controls {
             width: 100%;
             display: flex;
@@ -457,7 +463,7 @@
 
         /* ===== RIGHT SIDEBAR ===== */
         .sidebar {
-            width: 300px;
+            width: 280px;
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -682,7 +688,7 @@
             <button id="startBtn" class="btn btn-primary">START GAME</button>
             <button id="loadBtn" class="btn btn-secondary">LOAD GAME</button>
             <div class="menu-footer">
-                <p>🪨 Click to mine • 💼 Hire miners to automate • 🛗 Use elevator to collect money</p>
+                <p>🪨 Click miners to mine • 💼 Hire auto miners • 🛗 Click elevator to sell ore</p>
             </div>
         </div>
     </div>
@@ -711,6 +717,24 @@
 
             <!-- Main Game Area -->
             <div class="game-content">
+                <!-- ELEVATOR TOWER (on left) -->
+                <div class="elevator-tower">
+                    <div class="elevator-title">🛗 ELEVATOR</div>
+                    <div class="elevator-shaft">
+                        <div class="elevator-ore-display" id="elevatorOreDisplay">0 ore</div>
+                        <div class="elevator-car" id="elevatorCar">
+                            <div class="elevator-car-inner">
+                                <div>⬆️ CLICK</div>
+                                <div style="font-size: 0.7rem;">TO SELL</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elevator-status">
+                        <div id="elevatorStatusText">Ready to use</div>
+                        <div style="font-size: 0.75rem; margin-top: 3px;">Cost: $5 per use</div>
+                    </div>
+                </div>
+
                 <!-- Mines Area (scrollable) -->
                 <div class="mines-area" id="minesArea">
                     <!-- Mine shafts will be generated here -->
@@ -736,9 +760,12 @@
 
                     <!-- Quick Info -->
                     <div class="sidebar-section">
-                        <h3>ℹ️ INFO</h3>
+                        <h3>ℹ️ HOW TO PLAY</h3>
                         <p style="color: #F5DEB3; font-size: 0.9rem;">
-                            Click on miner to mine ore. Use elevator to sell ore and get money. Buy miners to automate. Unlock new mines by going deeper!
+                            1️⃣ Click miner to mine<br>
+                            2️⃣ Click elevator to sell<br>
+                            3️⃣ Buy miners to automate<br>
+                            4️⃣ Unlock new mines!
                         </p>
                     </div>
                 </div>
@@ -803,7 +830,8 @@
             isPaused: false,
             managers: {},
             resources: {},
-            mines: {}
+            mines: {},
+            currentMineWithOre: 0
         };
 
         // Initialize managers
@@ -840,6 +868,46 @@
         const closeStatsBtn = document.getElementById('closeStatsBtn');
         const saveBtn = document.getElementById('saveBtn');
         const minesArea = document.getElementById('minesArea');
+        const elevatorCar = document.getElementById('elevatorCar');
+        const elevatorOreDisplay = document.getElementById('elevatorOreDisplay');
+
+        // ===== ELEVATOR SYSTEM =====
+        function getTotalOreInElevator() {
+            return Object.values(gameState.mines).reduce((sum, mine) => sum + mine.oreInHand, 0);
+        }
+
+        function useElevator() {
+            if (gameState.isPaused) return;
+
+            let totalOre = getTotalOreInElevator();
+            if (totalOre === 0) {
+                showNotification('❌ No ore in elevator!');
+                return;
+            }
+
+            const elevatorCost = 5;
+            if (gameState.money < elevatorCost) {
+                showNotification('❌ Not enough money for elevator!');
+                return;
+            }
+
+            let totalEarnings = 0;
+
+            // Calculate earnings from all mines and clear them
+            Object.values(gameState.mines).forEach(mine => {
+                if (mine.oreInHand > 0) {
+                    const ore = ORE_TYPES[mine.oreIndex];
+                    const earnings = mine.oreInHand * ore.value;
+                    totalEarnings += earnings;
+                    gameState.resources[ore.name.toLowerCase()] += mine.oreInHand;
+                    mine.oreInHand = 0;
+                }
+            });
+
+            gameState.money += totalEarnings - elevatorCost;
+            showNotification(`💰 Earned $${totalEarnings - elevatorCost}! (Sold ${totalOre} ore)`);
+            updateDisplay();
+        }
 
         // ===== MINE CREATION =====
         function createMineShaft(mineData) {
@@ -861,18 +929,12 @@
                     <p>In Hand: <strong id="ore-count-${mineData.id}">0</strong></p>
                 </div>
 
-                <div class="elevator-shaft">
-                    <div class="ore-stack" id="ore-stack-${mineData.id}">0 ore</div>
-                    <div class="elevator-car" id="elevator-${mineData.id}">⬆️ SELL</div>
-                </div>
-
                 <div class="mining-area">
                     <div class="miner" id="miner-${mineData.id}">
                         <div class="miner-head"></div>
                         <div class="miner-body"></div>
                         <div class="miner-pickaxe"></div>
                     </div>
-                    <div class="mining-info" id="mining-info-${mineData.id}">Click Miner</div>
                 </div>
 
                 <div class="mine-controls">
@@ -887,13 +949,11 @@
             // Event listeners
             const mineBtn = document.getElementById(`mine-btn-${mineData.id}`);
             const miner = document.getElementById(`miner-${mineData.id}`);
-            const elevatorBtn = document.getElementById(`elevator-${mineData.id}`);
             const autoMinerBtn = document.getElementById(`auto-miner-btn-${mineData.id}`);
             const unlockBtn = document.getElementById(`unlock-btn-${mineData.id}`);
 
             if (mineBtn) mineBtn.addEventListener('click', () => minOre(mineData.id));
             if (miner) miner.addEventListener('click', () => minOre(mineData.id));
-            if (elevatorBtn) elevatorBtn.addEventListener('click', () => useElevator(mineData.id));
             if (autoMinerBtn) autoMinerBtn.addEventListener('click', () => buyAutoMiner(mineData.id));
             if (unlockBtn) unlockBtn.addEventListener('click', () => unlockMine(mineData.id));
         }
@@ -911,30 +971,6 @@
 
             const ore = ORE_TYPES[mine.oreIndex];
             showNotification(`⛏️ Mined ${ore.name}!`);
-            updateDisplay();
-        }
-
-        function useElevator(mineId) {
-            if (gameState.isPaused) return;
-            const mine = gameState.mines[mineId];
-            if (!mine.unlocked || mine.oreInHand === 0) {
-                showNotification('❌ No ore in hand!');
-                return;
-            }
-
-            const ore = ORE_TYPES[mine.oreIndex];
-            const earnings = mine.oreInHand * ore.value;
-            const elevatorCost = 5;
-
-            if (gameState.money < elevatorCost) {
-                showNotification('❌ Not enough money for elevator!');
-                return;
-            }
-
-            gameState.money += earnings - elevatorCost;
-            gameState.resources[ore.name.toLowerCase()] += mine.oreInHand;
-            showNotification(`💰 Earned $${earnings - elevatorCost}!`);
-            mine.oreInHand = 0;
             updateDisplay();
         }
 
@@ -999,14 +1035,17 @@
             const unlockedCount = Object.values(gameState.mines).filter(m => m.unlocked).length;
             document.getElementById('minesDisplay').textContent = `${unlockedCount}/4`;
 
+            // Update elevator display
+            const totalOre = getTotalOreInElevator();
+            elevatorOreDisplay.textContent = totalOre > 0 ? `${totalOre} ore` : 'Empty';
+            document.getElementById('elevatorStatusText').textContent = totalOre > 0 ? '📦 Ready to sell!' : 'Waiting...';
+
             // Update each mine's ore count
             Object.values(gameState.mines).forEach(mine => {
                 const oreCountEl = document.getElementById(`ore-count-${mine.id}`);
-                const oreStackEl = document.getElementById(`ore-stack-${mine.id}`);
                 const autoMinerBtn = document.getElementById(`auto-miner-btn-${mine.id}`);
                 
                 if (oreCountEl) oreCountEl.textContent = mine.oreInHand;
-                if (oreStackEl) oreStackEl.textContent = mine.oreInHand > 0 ? `${mine.oreInHand} ore` : 'Empty';
                 
                 if (autoMinerBtn) {
                     if (mine.hasAutoMiner) {
@@ -1169,6 +1208,7 @@
         });
         closeStatsBtn.addEventListener('click', () => statsModal.classList.remove('show'));
         saveBtn.addEventListener('click', saveGame);
+        elevatorCar.addEventListener('click', useElevator);
 
         // Auto-save every 30 seconds
         setInterval(() => {
